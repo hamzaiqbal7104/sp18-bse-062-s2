@@ -1,0 +1,27 @@
+extend ../layout 
+
+block content 
+    .row
+        .col-sm-8
+            h1 Edureka's Course List
+        .col-sm-4
+            a(href="/shopname/add" class="btn btn-success") Add new Course
+    
+    table.table
+        thead
+            tr
+                th Course Name
+                th Course Id
+                th Course Duration
+                th Course Fee
+                th Action
+        tbody
+            each shop in shops
+                tr
+                    td=shop.shopname
+                    td=shop.productname
+                    td=shop.quantity
+                    td=shop.address
+                    td
+                        a(href="/shopname/delete/"+shop._id,class="btn btn-danger") Delete
+                        a(href="/shopname/edit/"+shop._id,class="btn btn-warning") Edit
